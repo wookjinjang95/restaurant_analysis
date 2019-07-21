@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="css_files/sidebar.css">
+    <link rel="stylesheet" href="css_files/text.css">
+    <link rel="stylesheet" href="css_files/dash_box.css">
+
+    <title></title>
+  </head>
+  <body>
+    <div class="top_of_page">
+      <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" width="270" height="60" alt="">
+        </a>
+      </nav>
+    </div>
+    <div class="column_left">
+      <div class="vertical-menu">
+        <a href="index.html">Home</a>
+        <a href="line_graph.html">Trend</a>
+        <a href="search.html" class="active">Search</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+    <div class="column_right">
+        <div class="gb_title">
+          Search for Searches..
+        </div>
+        <p class="general_text">
+            Welcome to the search for searhces section. In here, you can search for keywords within all
+            the comments we data mined for you. Below bar graphs will demonstrate what are most words that are used
+            or repeated from all comements from different people. If you need to understand what this bar graph
+            does, please go to the <a href="about.html">About Section</a> to learn more.
+        </p>
+        <canvas id="regNegBar" height="100px" margin="auto"></canvas>
+        <canvas id="regPosBar" height="100px" margin-"auto"></canvas>
+      <div class="gb_title">
+        Individual Review
+      </div>
+      <p class="general_text">
+          Now we know which words are most being used in both negative and positive comments, you can search those
+          keywords below to see the full context of each reviews. Due to data security, we decided not to show who
+          person is that left the comment about your restaurant. Apology for convenience.
+      </p>
+      <h1 class="header">Instruction</h1>
+      <p class="general_text">
+        By looking at the color, you can tell by left side is the positive reviews and right side is a negative reviews.
+
+      </p>
+      <div class="searchnav-pos">
+        <div class="search-container">
+          <input type="text" onkeyup="filterThrough_Pos()" placeholder="Search in positive..">
+        </div>
+      </div>
+      <div class="searchnav-neg">
+        <div class="search-container">
+          <input type="text" onkeyup="filterThrough_Neg()" placeholder="Search in negative..">
+        </div>
+      </div>
+      <div>
+        <div class="p_scrollbox"></div>
+        <div class="n_scrollbox"></div>
+      </div>
+    </div>
+    <script src="js_files/search_rev.js"></script>
+  </body>
+</html>

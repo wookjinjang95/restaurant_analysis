@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="css_files/sidebar.css">
+    <link rel="stylesheet" href="css_files/text.css">
+
+    <title></title>
+  </head>
+  <body>
+    <div class="top_of_page">
+      <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" width="270" height="60" alt="">
+        </a>
+      </nav>
+    </div>
+    <div class="column_left">
+      <div class="vertical-menu">
+        <a href="index.html">Home</a>
+        <a href="line_graph.html">Trend</a>
+        <a href="search.html">Search</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html" class="active">About</a>
+      </div>
+    </div>
+    <div>
+
+    </div>
+    <div class="column_right">
+      <div class="gb_title">
+        General Analysis
+      </div>
+      <h1 class="header">INTRODUCTION</h1>
+      <p class="general_text">
+        Welcome to Sybest and thank you for using our services.
+        To introduce what Sybest is, Sybest will like to talk about data science.
+        Data science is a tool that analyze big data and create insights or stories within that data.
+        Without data, data science wouldn't exist in the first place. Currently in Silicon Valley,
+        big companies like Apple, Facebook, and Google are hiring data scientists to make predictions,
+        insights, and patterns using big data. For example, Facebook monitors your behavior by collecting
+        data of your actions on Facebook application and predict which type of advertisements you will
+        be interested in. Thus, Facebook can bring more revenue on their side just by analyizing you.
+      </p>
+      <h1 class="header">What is Sybest about?</h1>
+      <p class="general_text">
+        Sybest is all about individuals within our society. Our goal is to make advanced tools, such as data science,
+        available and accessable to anyone who needs this benefit. Currently in Silicon Valley, the average costs
+        to hire one data scientist is $170,000 dollars a year. Due to high cost, any ordinary people don't have
+        money to hire data scientist. Currently, only big corporations use data science to increase profit and revenue.
+        Data science is also known as artificial intelligence because it can predict future using data.
+      </p>
+      <p  >
+        Sybest has a main business goal. We believe that everyone, your neighbor or friends, should be able to know
+        what data science and artificial intelligence is, and how is it being used currently that will help any businesses.
+        Sybest believe that only big corporations have monopoly in data science market.
+      </p>
+      <h1 class="header">Okay, why do I need data science?</h1>
+      <p>
+        Let us do some analysis for you. We use script and automation based on your restaurant name or keywords.
+        Then we have an automated machine that scrapes the data of your restaurant reviews from Google and Yelp website.
+        Here are the general analysis Sybest got for you. After seeing our analysis, you will notice the power of having data
+        and using data science and analysis tool to analyze the current situation and behavior of your business.
+      </p>
+      <h1 class="header">Negative Vs. Positive</h1>
+      <canvas id="pieChart" height = "100px" width: "100px" margin: "auto"></canvas>
+      <p>
+        The above figure is a pie chart of your restaurant reviews we collected from different sources. Please hover your
+        mouse around the pie graph to see the details in the chart. It is good to know how many negative reviews and positive
+        reviews you have on your restaurant. It tells you if majority of the people or customers like your restaurant.
+        Every dish that comes back from customers doesn't really say if they really liked it or not. People use social media
+        like Yelp and Google to leave true reviews.
+      </p>
+      <p id="pie_description"></p>
+      <p>
+        We also have a trend graph that tells you when you got the negative reviews and positive reviews. If you click the
+        <a href="line_graph.html">Learn More</a>, you will notice the trend of what time you got certain reviews at certain month
+        or time.
+      </p>
+      <h1 class="header">Keywords in reviews</h1>
+      <p>
+        Not only we can collect your reviews and total number of reviews, Sybest can also do insight analytics by looking into
+        keywords in both positive and negative categories. As you can see below bar graph, it shows the most repetitive words.
+        The first word in the list shown in the bar graph is the most used word in your reviews.
+      </p>
+      <canvas id="negBarChart" height="150px" margin="auto"></canvas>
+      <p>
+        Below are the keywords that we found from positive reviews. You can track which keywords are mostly used when people comment about
+        your restaurant or business. It is great to see what reviews customers are writing about.
+      </p>
+      <canvas id="posBarChart" height="150px" margin-"auto"></canvas>
+      <p>
+        Okay.. We know that looking at these keywords don't bring you deep insight of what each customer like about your restaurant
+        or don't like about your restaurant. That's okay because this is just a high level view of your comments and keywords.
+        The above graph is a graph to demonstrate which keywords are you looking for within all reviews that customers wrote about
+        your restaurant.
+      </p>
+    </div>
+    <div class="bar_div">
+      <!-- put your live text here.. -->
+    </div>
+
+  </body>
+  <script src="js_files/bt_charts.js"></script>
+</html>

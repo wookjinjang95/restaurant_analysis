@@ -1,0 +1,21 @@
+.box {
+  width: 31.2%;
+  height: 300px;
+  padding: 10px;
+  margin: 10.4px;
+  display: inline-block;
+  display: -moz-inline-box;
+  zoom: 1;
+  background-color: white;
+}
+
+.dash{
+  width: 90%;
+  float: left;
+  position: fixed;
+  height: 100%;
+  display: inline-block;
+  margin-left: 180px;
+  margin-top: 85px;
+  background-color: grey;
+}

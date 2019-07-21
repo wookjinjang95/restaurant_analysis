@@ -1,0 +1,92 @@
+.vertical-menu {
+  width: 100%; /* Set a width if you like */
+}
+
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+  color: white;
+}
+.top_of_page{
+  position: fixed;
+  width: 100%;
+}
+.column_right{
+  width: 80%;
+  float: left;
+  height: 100%;
+  display: inline-block;
+  padding: 10px;
+  margin-left: 180px;
+  margin-top: 85px;
+}
+
+.column_left {
+  width: 180px;
+  float: left;
+  height: 100%;
+  position: fixed;
+  margin-top: 85px;
+}
+
+.searchnav-pos{
+  overflow: hidden;
+  background-color: rgb(135,206,250, 1);
+  width: 50%;
+  height: 50px;
+  float: left;
+}
+
+.searchnav-neg{
+  overflow: hidden;
+  background-color: rgb(255,99,71, 1);
+  width: 50%;
+  height: 50px;
+  float: left;
+}
+
+
+.searchnav-pos .search-container{
+  float: right;
+  padding: 6px 10px;
+  margin-top: 4px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(135,206,250, 1);
+}
+
+.searchnav-pos .search-container button {
+  margin-top: 2px;
+}
+
+.searchnav-neg .search-container{
+  float: right;
+  padding: 6px 10px;
+  margin-top: 4px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(255,99,71, 1);
+}
+
+.searchnav-neg .search-container button{
+  margin-top: 2px;
+}
