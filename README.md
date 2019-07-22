@@ -7,7 +7,7 @@ access into data analytics and data science
 ### index.html (still working..)
 
 This is the main site. It is currently on development but a first page where users login to. Once you click the login page, 
-it will lead to the main product website.
+it will lead to the main product website. Remember that the product is still under development.
 
 ### css_files
 
