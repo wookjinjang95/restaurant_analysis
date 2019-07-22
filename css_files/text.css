@@ -18,6 +18,19 @@ p{
   font-size: 30px;
   font-family: "Times New Roman", Times, serif;
   text-transform: uppercase;
+  border-bottom-style: solid;
+  border-color: rgb(151, 150, 150, 0.5);
+  border-width: 2px 2px 2px 2px;
+}
+
+.header-purpose{
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  border-bottom-style: solid;
+  border-color: rgb(151, 150, 150, 0.5);
+  border-width: 2px 2px 2px 2px;
+  padding-top: 10px;
 }
 
 .p_scrollbox{
@@ -84,4 +97,20 @@ p{
 #first_top_of_search{
   background-color: #B08F8F;
   height: 50%;
+}
+
+.profile-img{
+  height: 250px;
+  width: 200px;
+  float: left;
+  padding-right: 10px;
+}
+
+iframe{
+  width: 600px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-bottom: 20px;
 }

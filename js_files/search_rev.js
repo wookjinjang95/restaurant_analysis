@@ -203,3 +203,5 @@ var reg_pos_bar_config = {
 //this is the setup for frequency in regular bar
 var rgNegFreqBar = new Chart(regNeg_bar, reg_neg_bar_config);
 var rgPosFreqBar = new Chart(regPos_bar, reg_pos_bar_config);
+
+//this is for setting the view..

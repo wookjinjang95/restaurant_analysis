@@ -12,6 +12,11 @@
   z-index: 1;
 }
 
+.vertical-menu img{
+  width: 40px;
+  height: 40px;
+}
+
 .vertical-menu a:hover {
   background-color: #ccc; /* Dark grey background on mouse-over */
 }
@@ -35,7 +40,7 @@
 }
 
 .column_left {
-  width: 180px;
+  width: 160px;
   float: left;
   height: 100%;
   position: fixed;

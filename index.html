@@ -9,41 +9,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <link rel="stylesheet" href="css_files/sidebar.css">
-    <link rel="stylesheet" href="css_files/text.css">
-    <link rel="stylesheet" href="css_files/dash_box.css">
+    <link rel="stylesheet" href="css_files/login.css">
 
     <title></title>
   </head>
   <body>
-    <div class="top_of_page">
-      <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-          <img src="images/logo.png" width="270" height="60" alt="">
-        </a>
-      </nav>
+    <div class="login_box">
+      <form action="contact.html">
+        <label for="fname">Login</label>
+        <input type="text"></input>
+        <label for="fname">Password</label>
+        <input type="text"></input>
+        <button type="submit">Login</button>
+      </form>
     </div>
-    <div class="column_left">
-      <div class="vertical-menu">
-        <a href="index.html" class="active">Home</a>
-        <a href="line_graph.html">Trend</a>
-        <a href="search.html">Search</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-      </div>
-    </div>
-
-    <div class="dash">
-      <div>
-        <div class="box">
-          <canvas id="pieChart" height="240"></canvas>
-        </div>
-        <div class="box">
-        </div>
-        <div class="box">
-        </div>
-      </div>
-    </div>
-    <script src="js_files/bt_charts.js"></script>
   </body>
 </html>

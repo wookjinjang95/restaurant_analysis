@@ -25,11 +25,21 @@
     </div>
     <div class="column_left">
       <div class="vertical-menu">
+        <!--
         <a href="index.html">Home</a>
-        <a href="line_graph.html">Trend</a>
-        <a href="search.html" class="active">Search</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
+      -->
+        <a href="line_graph.html">
+          <img src="images/trend.png">Trend
+        </a>
+        <a href="search.html" class="active">
+          <img src="images/search.png">Search
+        </a>
+        <a href="about.html">
+          <img src="images/general.png">General
+        </a>
+        <a href="contact.html">
+          <img src="images/about.png">About
+        </a>
       </div>
     </div>
     <div class="column_right">
@@ -50,13 +60,16 @@
       <p class="general_text">
           Now we know which words are most being used in both negative and positive comments, you can search those
           keywords below to see the full context of each reviews. Due to data security, we decided not to show who
-          person is that left the comment about your restaurant. Apology for convenience.
+          person is that left the comment about your restaurant. Apology for inconvenience.
       </p>
       <h1 class="header">Instruction</h1>
       <p class="general_text">
         By looking at the color, you can tell by left side is the positive reviews and right side is a negative reviews.
-
+        Each side of the column has a search text box. There you can search for the keywords and the table will show you
+        all the comments that has that keyword. By doing so, you, as a business user, can do some analysis depending on
+        which area in your business you want to improve by keywords.
       </p>
+      <h1 class="header">Search for keywords</h1>
       <div class="searchnav-pos">
         <div class="search-container">
           <input type="text" onkeyup="filterThrough_Pos()" placeholder="Search in positive..">
