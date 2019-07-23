@@ -70,8 +70,41 @@ for(var i = 0; i < n_reviews.negative.length; i++){
   n_data_total += n_reviews.negative[i].count;
 }
 
-var ctxL = document.getElementById("lineChart").getContext('2d');
-//var ctxP = document.getElementById("pieChart").getContext('2d');
+var pos_yelp_reviews =
+  {"8 years ago": 41,
+    "7 years ago": 79,
+    "6 years ago": 78,
+    "5 years ago": 129,
+    "4 years ago": 125,
+    "3 years ago": 110,
+    "2 years ago": 157,
+    "1 years ago": 115,
+    "0 years ago": 73
+};
+
+var neg_yelp_reviews =
+  {"8 years ago": 6,
+    "7 years ago": 14,
+    "6 years ago": 15,
+    "5 years ago": 14,
+    "4 years ago": 28,
+    "3 years ago": 14,
+    "2 years ago": 29,
+    "1 years ago": 18,
+    "0 years ago": 15
+};
+var yelp_labels = [];
+var yelp_p_data = [];
+var yelp_n_data = [];
+
+for(var key in pos_yelp_reviews){
+  yelp_labels.push(key);
+  yelp_p_data.push(pos_yelp_reviews[key]);
+  yelp_n_data.push(neg_yelp_reviews[key]);
+}
+
+var ctxY = document.getElementById("yelpChart").getContext('2d');
+var ctxG = document.getElementById("googleChart").getContext('2d');
 
 var line_config = {
   type: 'line',
@@ -106,5 +139,26 @@ var pie_config = {
   }
 };
 
-var myLineChart = new Chart(ctxL, line_config);
+var yelp_line_config = {
+  type: "line",
+  data: {
+    labels: yelp_labels,
+    datasets: [{
+      label: 'positive reviews',
+      backgroundColor: 'rgb(135,206,250, 0.3)',
+      borderColor: "blue",
+      fill: true,
+      data: yelp_p_data
+    },{
+      label: 'negative reviews',
+      backgroundColor: 'rgb(255,99,71, 0.7)',
+      borderColor: "red",
+      fill: true,
+      data: yelp_n_data
+    }]
+  }
+};
+
+var myLineChart = new Chart(ctxY, yelp_line_config);
+var myLineChart = new Chart(ctxG, line_config);
 //var myPieChart = new Chart(ctxP, pie_config);
