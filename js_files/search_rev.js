@@ -28,6 +28,51 @@ var neg_fd = [
   {"word": "collar", "count": 2}
 ];
 
+//this is yelp data
+var yelp_pos_fq = [
+  {"word": "good", "count": 789},
+  {"word": "food", "count": 734},
+  {"word": "place", "count": 622},
+  {"word": "like", "count": 487},
+  {"word": "wait", "count": 472},
+  {"word": "beef", "count": 455},
+  {"word": "japanese", "count": 452},
+  {"word": "5", "count": 452},
+  {"word": "corn", "count": 441},
+  {"word": "really", "count": 424}
+];
+
+var yelp_neg_fq = [
+  {"word": "food", "count": 160},
+  {"word": "good", "count": 117},
+  {"word": "place", "count": 100},
+  {"word": "us", "count": 92},
+  {"word": "like", "count": 80},
+  {"word": "service", "count": 77},
+  {"word": "would", "count": 67},
+  {"word": "time", "count": 65},
+  {"word": "one", "count": 65},
+  {"word": "kiraku", "count": 63}
+];
+
+// this is for yelp frequency
+var yelp_positive_freq_words = yelp_pos_fq.map(function(e){
+  return e.word;
+});
+
+var yelp_negative_freq_words = yelp_neg_fq.map(function(e){
+  return e.word;
+});
+
+var yelp_pos_freq_data = yelp_pos_fq.map(function(e){
+  return e.count;
+});
+
+var yelp_neg_freq_data = yelp_neg_fq.map(function(e){
+  return e.count;
+});
+
+// this is for google frequency
 var negative_freq_words = neg_fd.map(function(e){
   return e.word;
 });
@@ -132,8 +177,13 @@ function filterThrough_Neg(){
   }
 }
 
+//this is google data
 var regNeg_bar = document.getElementById("regNegBar");
 var regPos_bar = document.getElementById("regPosBar");
+
+//this is yelp data
+var reg_yelp_neg_bar = document.getElementById("yelpNegBar");
+var reg_yelp_pos_bar = document.getElementById("yelpPosBar");
 
 //this is the setup for regular bar
 var reg_neg_bar_config = {
@@ -144,16 +194,16 @@ var reg_neg_bar_config = {
       label: "# of Words in Negative Comments",
       data: negative_freq_words_count,
       backgroundColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(255, 99, 132, 0.9)',
-            'rgba(255, 99, 132, 0.8)',
-            'rgba(255, 99, 132, 0.7)',
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(255, 99, 132, 0.4)',
-            'rgba(255, 99, 132, 0.3)',
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(255, 99, 132, 0.1)'
+            'rgba(219, 50, 54, 1)',
+            'rgba(219, 50, 54, 0.9)',
+            'rgba(219, 50, 54, 0.8)',
+            'rgba(219, 50, 54, 0.7)',
+            'rgba(219, 50, 54, 0.6)',
+            'rgba(219, 50, 54, 0.5)',
+            'rgba(219, 50, 54, 0.4)',
+            'rgba(219, 50, 54, 0.3)',
+            'rgba(219, 50, 54, 0.2)',
+            'rgba(219, 50, 54, 0.1)'
       ]
     }],
   },
@@ -200,8 +250,262 @@ var reg_pos_bar_config = {
   }
 };
 
+//this is the setup for yelp
+var yelp_reg_neg_bar_config = {
+  type: 'bar',
+  data: {
+    labels: yelp_negative_freq_words,
+    datasets: [{
+      label: "# of Words in Negative Comments",
+      data: yelp_neg_freq_data,
+      backgroundColor: [
+          'rgba(219, 50, 54, 1)',
+          'rgba(219, 50, 54, 0.9)',
+          'rgba(219, 50, 54, 0.8)',
+          'rgba(219, 50, 54, 0.7)',
+          'rgba(219, 50, 54, 0.6)',
+          'rgba(219, 50, 54, 0.5)',
+          'rgba(219, 50, 54, 0.4)',
+          'rgba(219, 50, 54, 0.3)',
+          'rgba(219, 50, 54, 0.2)',
+          'rgba(219, 50, 54, 0.1)'
+      ]
+    }],
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+};
+
+var yelp_reg_pos_bar_config = {
+  type: 'bar',
+  data: {
+    labels: yelp_positive_freq_words,
+    datasets: [{
+      label: "# of Words in Positive Comments",
+      data: yelp_pos_freq_data,
+      backgroundColor: [
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 0.9)',
+            'rgba(54, 162, 235, 0.8)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(54, 162, 235, 0.5)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.3)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(54, 162, 235, 0.1)'
+      ]
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+};
+
 //this is the setup for frequency in regular bar
 var rgNegFreqBar = new Chart(regNeg_bar, reg_neg_bar_config);
 var rgPosFreqBar = new Chart(regPos_bar, reg_pos_bar_config);
 
-//this is for setting the view..
+//this is the setup for frequency in yelp.
+var ypNegFreqBar = new Chart(reg_yelp_neg_bar, yelp_reg_neg_bar_config);
+var ypPosFreqBar = new Chart(reg_yelp_pos_bar, yelp_reg_pos_bar_config);
+
+//starting here is for the number frequency trend
+var trend_pos_freq_raw =
+{"0 years ago": {"really": 35, "good": 69, "food": 74, "japanese": 34, "5": 61, "place": 47, "wait": 48, "like": 43, "beef": 58, "corn": 33},
+"1 years ago": {"place": 67, "japanese": 50, "food": 83, "beef": 71, "5": 65, "like": 44, "really": 44, "corn": 52, "wait": 71, "good": 80},
+"2 years ago": {"japanese": 65, "place": 94, "good": 108, "5": 83, "wait": 103, "food": 112, "beef": 92, "like": 80, "corn": 66, "really": 49},
+"3 years ago": {"corn": 61, "beef": 63, "good": 101, "food": 92, "place": 60, "like": 56, "wait": 74, "really": 41, "5": 34, "japanese": 47},
+"4 years ago": {"place": 78, "corn": 57, "beef": 69, "good": 81, "really": 53, "japanese": 52, "food": 86, "like": 64, "wait": 79, "5": 48},
+"5 years ago": {"wait": 65, "like": 84, "good": 133, "food": 101, "really": 85, "beef": 65, "corn": 60, "japanese": 67, "place": 112, "5": 71},
+"6 years ago": {"japanese": 44, "corn": 55, "beef": 31, "good": 76, "place": 62, "food": 59, "really": 33, "wait": 11, "5": 64, "like": 44},
+"7 years ago": {"corn": 40, "food": 63, "good": 95, "like": 53, "wait": 14, "japanese": 52, "really": 62, "5": 23, "place": 71, "beef": 5},
+"8 years ago": {"japanese": 41, "like": 19, "good": 46, "food": 64, "really": 22, "place": 31, "corn": 17, "5": 3, "wait": 7, "beef": 1}
+};
+
+var trend_neg_freq_raw =
+{"0 years ago": {"service": 9, "us": 18, "good": 13, "food": 19, "kiraku": 6, "like": 8, "would": 6, "time": 6, "place": 8, "one": 8},
+"1 years ago": {"time": 4, "food": 13, "good": 8, "place": 10, "would": 3, "kiraku": 4, "like": 6, "service": 4, "us": 5, "one": 2},
+"2 years ago": {"food": 29, "good": 16, "time": 9, "service": 12, "would": 8, "kiraku": 8, "us": 12, "place": 16, "one": 8, "like": 10},
+"3 years ago": {"food": 12, "service": 9, "us": 5, "good": 6, "like": 5, "would": 7, "time": 10, "place": 6, "kiraku": 3, "one": 2},
+"4 years ago": {"kiraku": 11, "time": 16, "one": 19, "would": 16, "good": 14, "service": 15, "food": 26, "us": 20, "place": 10, "like": 9},
+"5 years ago": {"like": 10, "kiraku": 14, "food": 18, "good": 11, "service": 7, "would": 9, "time": 7, "place": 8, "us": 9, "one": 2},
+"6 years ago": {"place": 18, "service": 9, "time": 11, "us": 11, "good": 22, "would": 5, "like": 17, "one": 15, "kiraku": 9, "food": 16},
+"7 years ago": {"place": 17, "like": 11, "good": 17, "food": 22, "one": 6, "kiraku": 6, "us": 11, "service": 8, "would": 10, "time": 2},
+"8 years ago": {"food": 5, "good": 10, "place": 7, "kiraku": 2, "one": 3, "would": 3, "service": 4, "like": 4, "us": 1}
+};
+
+var freq_x_labels = [];
+var pos_freq_y_data = {};
+var neg_freq_y_data = {};
+var keywords = [];
+
+//console.log(yelp_positive_freq_words);
+
+for (var key in trend_pos_freq_raw){
+  freq_x_labels.push(key);
+}
+freq_x_labels = freq_x_labels.reverse();
+
+for(var i = 0; i < freq_x_labels.length; i++){
+  var key = freq_x_labels[i];
+  var temp_dict = trend_pos_freq_raw[key];
+  for(var i1 = 0; i1 < yelp_positive_freq_words.length; i1++){
+    var word = yelp_positive_freq_words[i1];
+    if(word in pos_freq_y_data){
+      pos_freq_y_data[word].push(temp_dict[word]);
+    }
+    else{
+      pos_freq_y_data[word] = [temp_dict[word]];
+    }
+  }
+}
+
+for(var i = 0; i < freq_x_labels.length; i++){
+  var key = freq_x_labels[i];
+  var temp_dict = trend_neg_freq_raw[key];
+  for( var i1 = 0; i1 < yelp_negative_freq_words.length; i1++){
+    var word = yelp_negative_freq_words[i1];
+    if(word in neg_freq_y_data){
+      neg_freq_y_data[word].push(temp_dict[word]);
+    }else{
+      neg_freq_y_data[word] = [temp_dict[word]];
+    }
+  }
+}
+
+//this is yelp data with freq trend
+var pos_freq_trend = document.getElementById("freqPosBar");
+var neg_freq_trend = document.getElementById("freqNegBar");
+
+var pos_trend_line_config = {
+  type: 'line',
+  data: {
+    labels: freq_x_labels,
+    datasets: [{
+      label: yelp_positive_freq_words[0],
+      borderColor: "Red",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[0]]
+    },{
+      label: yelp_positive_freq_words[1],
+      borderColor: "Yellow",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[1]]
+    },{
+      label: yelp_positive_freq_words[2],
+      borderColor: "Orange",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[2]]
+    },{
+      label: yelp_positive_freq_words[3],
+      borderColor: "grey",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[3]]
+    },{
+      label: yelp_positive_freq_words[4],
+      borderColor: "blue",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[4]]
+    },{
+      label: yelp_positive_freq_words[5],
+      borderColor: "purple",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[5]]
+    },{
+      label: yelp_positive_freq_words[6],
+      borderColor: "aqua",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[6]]
+    },{
+      label: yelp_positive_freq_words[7],
+      borderColor: "teal",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[7]]
+    },{
+      label: yelp_positive_freq_words[8],
+      borderColor: "fuchsia",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[8]]
+    },{
+      label: yelp_positive_freq_words[9],
+      borderColor: "maroon",
+      fill: false,
+      data: pos_freq_y_data[yelp_positive_freq_words[9]]
+    }]
+  }
+};
+
+var neg_trend_line_config = {
+  type: 'line',
+  data: {
+    labels: freq_x_labels,
+    datasets: [{
+      label: yelp_negative_freq_words[0],
+      borderColor: "Red",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[0]]
+    },{
+      label: yelp_negative_freq_words[1],
+      borderColor: "Yellow",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[1]]
+    },{
+      label: yelp_negative_freq_words[2],
+      borderColor: "Orange",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[2]]
+    },{
+      label: yelp_negative_freq_words[3],
+      borderColor: "grey",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[3]]
+    },{
+      label: yelp_negative_freq_words[4],
+      borderColor: "blue",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[4]]
+    },{
+      label: yelp_negative_freq_words[5],
+      borderColor: "purple",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[5]]
+    },{
+      label: yelp_negative_freq_words[6],
+      borderColor: "aqua",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[6]]
+    },{
+      label: yelp_negative_freq_words[7],
+      borderColor: "teal",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[7]]
+    },{
+      label: yelp_negative_freq_words[8],
+      borderColor: "fuchsia",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[8]]
+    },{
+      label: yelp_negative_freq_words[9],
+      borderColor: "maroon",
+      fill: false,
+      data: neg_freq_y_data[yelp_negative_freq_words[9]]
+    }]
+  }
+};
+
+var draw_pos_freq_trend = new Chart(pos_freq_trend, pos_trend_line_config);
+var draw_neg_freq_trend = new Chart(neg_freq_trend, neg_trend_line_config);

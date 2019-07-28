@@ -32,12 +32,12 @@
           <img src="images/trend.png">Trend
         </a>
         <a href="search.html" class="active">
-          <img src="images/search.png">Search
+          <img src="images/search.png">Analysis
         </a>
         <a href="about.html">
-          <img src="images/general.png">General
+          <img src="images/general.png">User Guide
         </a>
-        <a href="contact.html">
+        <a href="index.html">
           <img src="images/about.png">About
         </a>
       </div>
@@ -46,14 +46,38 @@
         <div class="gb_title">
           Search for Searches..
         </div>
-        <p class="general_text">
-            Welcome to the search for searhces section. In here, you can search for keywords within all
-            the comments we data mined for you. Below bar graphs will demonstrate what are most words that are used
-            or repeated from all comements from different people. If you need to understand what this bar graph
-            does, please go to the <a href="about.html">About Section</a> to learn more.
+        <p>
+        Welcome to the search for searhces section. In here, you can search for keywords within all
+        the comments we data mined for you. Below bar graphs will demonstrate what are most words that are used
+        or repeated from all comements from different people. If you need to understand what this bar graph
+        does, please go to the <a href="about.html">About Section</a> to learn more.
         </p>
+        <h1 class="header">Google</h1>
         <canvas id="regNegBar" height="100px" margin="auto"></canvas>
         <canvas id="regPosBar" height="100px" margin-"auto"></canvas>
+        <h1 class="header">YELP</h1>
+        <canvas id="yelpNegBar" height="100px" margin="auto"></canvas>
+        <canvas id="yelpPosBar" height="100px" margin="auto"></canvas>
+
+        <h1 class="header">Progress</h1>
+        <p>
+          Progress graph will tell you the top 10 keywords being used overall each year. We first find the top 10 keywords
+          just like the previous graph. Then, we search those individual keywords in every single comment. It counts how many
+          reviews or comments used those keywords. At the end, you get the result of whether those keywords used less, more, or
+          still same in your restaurant or local business. To know your progress, please check <a href="line_graph.html">Trend Section</a>
+          for more details.
+        </p>
+        <div class="gb_title">Progress on Keywords</div>
+        <p>
+          These are the total amount of comments that used the keywords that we defined in the previous bar graph.
+          The graph below demonstrates the trend of the top 10 popular keywords in a timeline. Due to the poor data structure
+          from Google, we only used Yelp data for visualization. Google doesn't provide us enough time data for Sybest to create
+          accurate timeline graph.
+        </p>
+        <h1 class="header">Negative</h1>
+        <canvas id="freqNegBar" height="100px" margin="auto"></canvas>
+        <h1 class="header">Positive</h1>
+        <canvas id="freqPosBar" height="100px" margin="auto"></canvas>
       <div class="gb_title">
         Individual Review
       </div>
@@ -69,7 +93,7 @@
         all the comments that has that keyword. By doing so, you, as a business user, can do some analysis depending on
         which area in your business you want to improve by keywords.
       </p>
-      <h1 class="header">Search for keywords</h1>
+      <h1 class="header">Keyword Browser</h1>
       <div class="searchnav-pos">
         <div class="search-container">
           <input type="text" onkeyup="filterThrough_Pos()" placeholder="Search in positive..">

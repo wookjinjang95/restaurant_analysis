@@ -29,22 +29,14 @@
   position: fixed;
   width: 100%;
 }
-.column_right{
-  width: 80%;
-  float: left;
-  height: 100%;
-  display: inline-block;
-  padding: 10px;
-  margin-left: 180px;
-  margin-top: 85px;
-}
 
 .column_left {
-  width: 160px;
+  width: 12%;
   float: left;
   height: 100%;
   position: fixed;
   margin-top: 85px;
+  display: inline-block;
 }
 
 .searchnav-pos{
