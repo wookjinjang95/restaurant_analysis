@@ -3,27 +3,33 @@
 }
 
 .vertical-menu a {
-  background-color: #eee; /* Grey background color */
+  /*background-color: #eee; /* Grey background color */
   color: black; /* Black text color */
   display: block; /* Make the links appear below each other */
   padding: 12px; /* Add some padding */
   text-decoration: none; /* Remove underline from links */
   overflow-x: hidden;
-  z-index: 1;
+  float: right;
+  justify-content: center;
+  margin-right: 10px;
 }
 
 .vertical-menu img{
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
 }
 
 .vertical-menu a:hover {
-  background-color: #ccc; /* Dark grey background on mouse-over */
+  color: #FF0000;
+  transition: 0.2s;
+  border-bottom: 1px solid;
+  padding-bottom: 1px;
+  /*background-color: #FF0000; /* Dark grey background on mouse-over */
 }
 
 .vertical-menu a.active {
-  background-color: #4CAF50; /* Add a green color to the "active/current" link */
-  color: white;
+  /*background-color: #4CAF50; /* Add a green color to the "active/current" link */
+  color: #FF0000;
 }
 .top_of_page{
   position: fixed;

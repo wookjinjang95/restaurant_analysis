@@ -16,38 +16,30 @@
   </head>
   <body>
     <div class="top_of_page">
-      <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-          <img src="images/logo.png" width="270" height="60" alt="">
-        </a>
+      <nav class="navbar navbar-dark bg-dark" style="display: block">
+          <img src="images/logo.png" width="270" height="60" alt="" float="left">
+          <div class="vertical-menu">
+            <a href="index.html">
+              <img src="images/about.png">About
+            </a>
+            <a href="about.html">
+              <img src="images/general.png">User Guide
+            </a>
+            <a href="search.html">
+              <img src="images/search.png">Analysis
+            </a>
+            <a href="line_graph.html" class="active">
+              <img src="images/trend.png">Trend
+            </a>
+          </div>
       </nav>
-    </div>
-    <div class="column_left">
-      <div class="vertical-menu">
-        <!--
-        <a href="index.html">Home</a>
-      -->
-        <a href="line_graph.html" class="active">
-          <img src="images/trend.png">Trend
-        </a>
-        <a href="search.html">
-          <img src="images/search.png">Analysis
-        </a>
-        <a href="about.html">
-          <img src="images/general.png">User Guide
-        </a>
-        <a href="index.html">
-          <img src="images/about.png">About
-        </a>
-      </div>
     </div>
     <div class="column_right">
       <div class="gb_title">Trend</div>
       <h1 class="header">Yelp</h1>
-      <canvas id="yelpChart"></canvas>
+      <canvas id="yelpChart" height: "1000px important!" width: "500px"></canvas>
       <h1 class="header">Google</h1>
       <canvas id="googleChart"></canvas>
-      <div class="gb_title">Progress</div>
     </div>
   </body>
   <script src="js_files/trend.js"></script>
