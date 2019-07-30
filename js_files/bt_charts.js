@@ -178,7 +178,7 @@ var neg_bar_config = {
   },
   options: {
     scales: {
-      yAxes: [{
+      xAxes: [{
         ticks: {
           beginAtZero: true
         }
@@ -210,7 +210,7 @@ var pos_bar_config = {
   },
   options: {
     scales: {
-      yAxes: [{
+      xAxes: [{
         ticks: {
           beginAtZero: true
         }

@@ -93,6 +93,8 @@ var neg_yelp_reviews =
     "1 years ago": 18,
     "0 years ago": 15
 };
+
+
 var yelp_labels = [];
 var yelp_p_data = [];
 var yelp_n_data = [];
@@ -123,6 +125,9 @@ var line_config = {
       fill: true,
       data: n_data
     }]
+  },
+  options: {
+    responsive: true
   }
 };
 
@@ -156,9 +161,64 @@ var yelp_line_config = {
       fill: true,
       data: yelp_n_data
     }]
+  },
+  options: {
+    responsive: true
   }
 };
 
 var myLineChart = new Chart(ctxY, yelp_line_config);
 var myLineChart = new Chart(ctxG, line_config);
 //var myPieChart = new Chart(ctxP, pie_config);
+
+//the below code is JQuery for total positive and negative reviews
+
+var yelp_pos_total = p_data_total;
+var yelp_neg_total = n_data_total;
+
+for(var key in pos_yelp_reviews){
+  yelp_pos_total += pos_yelp_reviews[key];
+}
+for(var key in neg_yelp_reviews){
+  yelp_neg_total += neg_yelp_reviews[key];
+}
+
+$({ Counter: 0 }).animate({
+  Counter: yelp_pos_total
+  },{
+    duration: 1000,
+    easing: 'swing',
+    step: function() {
+      $('.posTicker').text(this.Counter.toFixed(0));
+      var value = this.Counter;
+      if( value < 10){
+        $('.posTicker').css('color', 'red');
+      }else if( value >= 10 && value < 100){
+        $('.posTicker').css('color', 'orange');
+      }else if( value >= 100 && value < 500){
+        $('.posTicker').css('color', 'brown');
+      }else if( value >= 500){
+        $('.posTicker').css('color', 'green');
+      }
+    }
+});
+
+$({ Counter: 0 }).animate({
+  Counter: yelp_neg_total
+  },{
+    duration: 1000,
+    easing: 'swing',
+    step: function() {
+      $('.negTicker').text("/"+this.Counter.toFixed(0));
+      var value = this.Counter;
+      if( value < 10){
+        $('.negTicker').css('color', 'green');
+      }else if( value >= 10 && value < 100){
+        $('.negTicker').css('color', 'brown');
+      }else if( value >= 100 && value < 500){
+        $('.negTicker').css('color', 'orange');
+      }else if( value >= 500){
+        $('.negTicker').css('color', 'red');
+      }
+    }
+});

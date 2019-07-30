@@ -179,3 +179,22 @@ iframe{
   display: block;
   float: left;
 }
+
+.numTicker{
+  font-size: 100px;
+  font-weight: normal;
+  display: inline-block;
+  float: left;
+}
+
+.posTicker{
+  font-size: 100px;
+  font-weight: normal;
+  float: left;
+}
+
+.negTicker{
+  font-size: 100px;
+  font-weight: normal;
+  float: right;
+}
