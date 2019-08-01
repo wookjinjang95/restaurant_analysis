@@ -1,5 +1,5 @@
 import numpy as np
-import csv, json
+import csv, json, random
 from sklearn.linear_model import LinearRegression
 
 def open_csv(fname):
@@ -30,13 +30,25 @@ def save_to_json(data, fname):
 if __name__=="__main__":
     result = open_csv("yelp_collection.csv")
     x,y = get_only_ratings(result)
-    print(x)
-    print(y)
+
+    #shuffle it randomize it.
+    #random.shuffle(y)
+
+    index = int(len(y)*0.9)
+
+    training_data = y[:index]
+    test_data = x[index:]
+    result = y[index:]
+    #print(len(y))
+    #print(len(training_data))
+    #print(len(test_data))
+
 
     #turn result into np
     x = np.array(x).reshape((-1,1))
     y = np.array(y)
 
+    #this is getting the length of np.array
     future_x = x.shape[0]+1
 
     #create a linear regression model (initialize)
