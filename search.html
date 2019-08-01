@@ -39,57 +39,35 @@
       </nav>
     </div>
     <div class="column_right">
-        <div class="gb_title">
-          Search for Searches..
+      <h1 class="header">Keyword Frequency</h1>
+      <div style="padding-bottom: 110px; display: inline-block">
+        <div style="height: 100px; width: 30vw; display: block; margin-bottom: 120px">
+          <a style="text-align: center">Google</a>
+          <canvas id="regNegBar" display="inline-block"></canvas>
         </div>
-        <p>
-        Welcome to the search for searhces section. In here, you can search for keywords within all
-        the comments we data mined for you. Below bar graphs will demonstrate what are most words that are used
-        or repeated from all comements from different people. If you need to understand what this bar graph
-        does, please go to the <a href="about.html">About Section</a> to learn more.
-        </p>
-        <h1 class="header">Google</h1>
-        <canvas id="regNegBar" height="100px" margin="auto"></canvas>
-        <canvas id="regPosBar" height="100px" margin-"auto"></canvas>
-        <h1 class="header">YELP</h1>
-        <canvas id="yelpNegBar" height="100px" margin="auto"></canvas>
-        <canvas id="yelpPosBar" height="100px" margin="auto"></canvas>
-
-        <h1 class="header">Progress</h1>
-        <p>
-          Progress graph will tell you the top 10 keywords being used overall each year. We first find the top 10 keywords
-          just like the previous graph. Then, we search those individual keywords in every single comment. It counts how many
-          reviews or comments used those keywords. At the end, you get the result of whether those keywords used less, more, or
-          still same in your restaurant or local business. To know your progress, please check <a href="line_graph.html">Trend Section</a>
-          for more details.
-        </p>
-        <div class="gb_title">Progress on Keywords</div>
-        <p>
-          These are the total amount of comments that used the keywords that we defined in the previous bar graph.
-          The graph below demonstrates the trend of the top 10 popular keywords in a timeline. Due to the poor data structure
-          from Google, we only used Yelp data for visualization. Google doesn't provide us enough time data for Sybest to create
-          accurate timeline graph.
-        </p>
-        <h1 class="header">Negative</h1>
-        <canvas id="freqNegBar" height="100px" margin="auto"></canvas>
-        <h1 class="header">Positive</h1>
-        <canvas id="freqPosBar" height="100px" margin="auto"></canvas>
-      <div class="gb_title">
-        Individual Review
+        <div style="height: 100px; width: 30vw; display: block">
+          <canvas id="regPosBar" display="inline-block"></canvas>
+        </div>
       </div>
-      <p class="general_text">
-          Now we know which words are most being used in both negative and positive comments, you can search those
-          keywords below to see the full context of each reviews. Due to data security, we decided not to show who
-          person is that left the comment about your restaurant. Apology for inconvenience.
-      </p>
-      <h1 class="header">Instruction</h1>
-      <p class="general_text">
-        By looking at the color, you can tell by left side is the positive reviews and right side is a negative reviews.
-        Each side of the column has a search text box. There you can search for the keywords and the table will show you
-        all the comments that has that keyword. By doing so, you, as a business user, can do some analysis depending on
-        which area in your business you want to improve by keywords.
-      </p>
-      <h1 class="header">Keyword Browser</h1>
+      <div style="padding-bottom: 60px; display: inline-block">
+        <div style="height: 100px; width: 30vw; display: block; margin-bottom: 120px">
+          <a style="text-align: center">Yelp</a>
+          <canvas id="yelpNegBar"></canvas>
+        </div>
+        <div style="height: 100px; width: 30vw; display: block">
+          <canvas id="yelpPosBar"></canvas>
+        </div>
+      </div>
+      <h1 class="header">Keyword Trend</h1>
+      <div style="height: 200px; width: 45vw; display: inline-block; margin-bottom: 120px; margin-right: 30px">
+        <a style="text-align: center">Positive Reviews</a>
+        <canvas id="freqNegBar"></canvas>
+      </div>
+      <div style="height: 200px; width: 45vw; display: inline-block; margin-bottom: 120px">
+        <a style="text-align: center">Negative Reviews</a>
+        <canvas id="freqPosBar"></canvas>
+      </div>
+      <h1 class="header" style="margin-top: 50px;">Keyword Search</h1>
       <div class="searchnav-pos">
         <div class="search-container">
           <input type="text" onkeyup="filterThrough_Pos()" placeholder="Search in positive..">
