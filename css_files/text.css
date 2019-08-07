@@ -56,6 +56,18 @@
   }
 }
 
+@media only screen and (min-width: 1600px){
+  .regular_header_title{
+    margin-top: 25%;
+  }
+}
+
+@media only screen and (max-width: 1599px){
+  .regular_header_title{
+    margin-top: 150px;
+  }
+}
+
 .column_right .gb_title{
   font-size: 40px;
   font-family: 'Open Sans',sans-serif;
