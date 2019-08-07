@@ -58,13 +58,13 @@
 
 @media only screen and (min-width: 1600px){
   .regular_header_title{
-    margin-top: 40%;
+    padding-top: 30%;
   }
 }
 
 @media only screen and (max-width: 1599px){
   .regular_header_title{
-    margin-top: 150px;
+    padding-top: 150px;
   }
 }
 
